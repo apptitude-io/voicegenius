@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C636E574EBD8EBA56769EAE /* DownloadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF363AEDF2344B72F87E98A6 /* DownloadProgressView.swift */; };
+		13CD58A9824F6E16D3F86B12 /* AudioCaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A6929ECAF5F2F03A88DE8 /* AudioCaptureService.swift */; };
+		20F1BE134896AF0E4E56A77B /* EndSessionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11993AB27D1A2825A4CCD /* EndSessionButton.swift */; };
+		24D439839A518DEF51A7C563 /* VoiceGeniusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE46B8BC972AA231E7E7A83 /* VoiceGeniusApp.swift */; };
+		4793B9BBBD27C4DEC13D158E /* TranscriptDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D9FE9E3D654165D14B5DC /* TranscriptDetailView.swift */; };
+		59436A42950D9F9F955DCD50 /* GlowVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316605F3AC64D4A600533DAD /* GlowVisualizer.swift */; };
+		6B60FEA6CF3286AE801A3C7F /* SidecarLLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30258851C12E47D3E1E39B /* SidecarLLMService.swift */; };
+		73DCB4FBBC2C75A7028B84EF /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038496C2841DA3D2400F692B /* Transcript.swift */; };
+		8286D2E0D3E43DC753D6EA85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFDE247CC7DA26B42C7E23 /* ContentView.swift */; };
+		AD5CDBCB2E72AF4A3CC46E0D /* ConversationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73EBD5113ADF19871D222E /* ConversationState.swift */; };
+		C7B4ECADDF68FDDA6C3F57E8 /* LLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61C921CAA1F64ABD8551C32 /* LLMService.swift */; };
+		CFA581343C9DBB77F8C99298 /* TranscriptStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6EE7BC24EC4CDFDEC433A9 /* TranscriptStore.swift */; };
+		DB7D04F5D1B207954486D5D8 /* ModelDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BDFCC89B75036B2BD435E /* ModelDownloader.swift */; };
+		EA01595C910A9A05E3B7B765 /* TranscriptHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C47F1576AEA4CD421904C22 /* TranscriptHistoryView.swift */; };
+		ED47FC37FD3B4ACFE183171B /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987372748FBF9B3B2B492AF9 /* SpeechRecognizer.swift */; };
+		F7DB7FACB78922EB0DA00817 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732B31FBEB49919AA62E5D8 /* ConversationViewModel.swift */; };
+		F9EAA8CB0EFBBA1999F0DF08 /* OnDeviceLLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF5C19A05242F0A879FC32 /* OnDeviceLLMService.swift */; };
+		FCD07E42FFAA906823AEE8BC /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A2BC74F20BF4D0AB02D8D /* SpeechSynthesizer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		038496C2841DA3D2400F692B /* Transcript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
+		2C30258851C12E47D3E1E39B /* SidecarLLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidecarLLMService.swift; sourceTree = "<group>"; };
+		2CAF758A0BA041E5521BC77F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		316605F3AC64D4A600533DAD /* GlowVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowVisualizer.swift; sourceTree = "<group>"; };
+		50EF5C19A05242F0A879FC32 /* OnDeviceLLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeviceLLMService.swift; sourceTree = "<group>"; };
+		54B11993AB27D1A2825A4CCD /* EndSessionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndSessionButton.swift; sourceTree = "<group>"; };
+		5F73EBD5113ADF19871D222E /* ConversationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationState.swift; sourceTree = "<group>"; };
+		6DE46B8BC972AA231E7E7A83 /* VoiceGeniusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceGeniusApp.swift; sourceTree = "<group>"; };
+		7C47F1576AEA4CD421904C22 /* TranscriptHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptHistoryView.swift; sourceTree = "<group>"; };
+		987372748FBF9B3B2B492AF9 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		A03A2BC74F20BF4D0AB02D8D /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		AE6D9FE9E3D654165D14B5DC /* TranscriptDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptDetailView.swift; sourceTree = "<group>"; };
+		B2AB5486581847936B65F304 /* VoiceGenius.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VoiceGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04BDFCC89B75036B2BD435E /* ModelDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDownloader.swift; sourceTree = "<group>"; };
+		C11A6929ECAF5F2F03A88DE8 /* AudioCaptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCaptureService.swift; sourceTree = "<group>"; };
+		C732B31FBEB49919AA62E5D8 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		CAEFDE247CC7DA26B42C7E23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF363AEDF2344B72F87E98A6 /* DownloadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadProgressView.swift; sourceTree = "<group>"; };
+		CF6EE7BC24EC4CDFDEC433A9 /* TranscriptStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptStore.swift; sourceTree = "<group>"; };
+		F61C921CAA1F64ABD8551C32 /* LLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		00CAFFA060519FDDA24AAB39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2AB5486581847936B65F304 /* VoiceGenius.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1611458BA97327FCCB76B9AF /* VoiceGenius */ = {
+			isa = PBXGroup;
+			children = (
+				2CAF758A0BA041E5521BC77F /* Info.plist */,
+				6DE46B8BC972AA231E7E7A83 /* VoiceGeniusApp.swift */,
+				4FBED94364311FF9BEC4920F /* Models */,
+				1A9EA19404D7B96D028D068F /* Services */,
+				FA45D54D3CF8A3BD602C6555 /* ViewModels */,
+				31EDA20B0AE4BF0BFD5BB368 /* Views */,
+			);
+			path = VoiceGenius;
+			sourceTree = "<group>";
+		};
+		1A9EA19404D7B96D028D068F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C11A6929ECAF5F2F03A88DE8 /* AudioCaptureService.swift */,
+				F61C921CAA1F64ABD8551C32 /* LLMService.swift */,
+				C04BDFCC89B75036B2BD435E /* ModelDownloader.swift */,
+				50EF5C19A05242F0A879FC32 /* OnDeviceLLMService.swift */,
+				2C30258851C12E47D3E1E39B /* SidecarLLMService.swift */,
+				987372748FBF9B3B2B492AF9 /* SpeechRecognizer.swift */,
+				A03A2BC74F20BF4D0AB02D8D /* SpeechSynthesizer.swift */,
+				CF6EE7BC24EC4CDFDEC433A9 /* TranscriptStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		31EDA20B0AE4BF0BFD5BB368 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAEFDE247CC7DA26B42C7E23 /* ContentView.swift */,
+				CF363AEDF2344B72F87E98A6 /* DownloadProgressView.swift */,
+				54B11993AB27D1A2825A4CCD /* EndSessionButton.swift */,
+				316605F3AC64D4A600533DAD /* GlowVisualizer.swift */,
+				AE6D9FE9E3D654165D14B5DC /* TranscriptDetailView.swift */,
+				7C47F1576AEA4CD421904C22 /* TranscriptHistoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4FBED94364311FF9BEC4920F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5F73EBD5113ADF19871D222E /* ConversationState.swift */,
+				038496C2841DA3D2400F692B /* Transcript.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C081E88450F0E69836209F89 = {
+			isa = PBXGroup;
+			children = (
+				1611458BA97327FCCB76B9AF /* VoiceGenius */,
+				00CAFFA060519FDDA24AAB39 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA45D54D3CF8A3BD602C6555 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C732B31FBEB49919AA62E5D8 /* ConversationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90B0EEB56785C5BD8A598DCE /* VoiceGenius */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 895171375AC4BF7BD06113C2 /* Build configuration list for PBXNativeTarget "VoiceGenius" */;
+			buildPhases = (
+				28D1930840E19F00B8CE9C68 /* Start Sidecar (Simulator Only) */,
+				CC130102FD60A4C39FD4D4F4 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoiceGenius;
+			packageProductDependencies = (
+			);
+			productName = VoiceGenius;
+			productReference = B2AB5486581847936B65F304 /* VoiceGenius.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CA60785763C8B8CDB839F14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					90B0EEB56785C5BD8A598DCE = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D140F67C004C5A3C85A6B420 /* Build configuration list for PBXProject "VoiceGenius" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C081E88450F0E69836209F89;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90B0EEB56785C5BD8A598DCE /* VoiceGenius */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28D1930840E19F00B8CE9C68 /* Start Sidecar (Simulator Only) */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Sidecar (Simulator Only)";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Only run for Simulator builds\nif [[ \"$PLATFORM_NAME\" == \"iphonesimulator\" ]]; then\n  SIDECAR_DIR=\"${SRCROOT}/sidecar\"\n  SIDECAR_LOG=\"/tmp/voicegenius_sidecar.log\"\n\n  # Check if sidecar is already running on port 8080\n  if lsof -i :8080 -sTCP:LISTEN > /dev/null 2>&1; then\n    echo \"✅ Sidecar already running on port 8080\"\n    exit 0\n  fi\n\n  # Check if Python dependencies are installed\n  if ! python3 -c \"import flask, mlx_lm\" 2>/dev/null; then\n    echo \"⚠️ Python dependencies not installed. Run:\"\n    echo \"   cd ${SIDECAR_DIR} && pip install -r requirements.txt\"\n    echo \"\"\n    echo \"Note: First run will download ~700MB model from HuggingFace\"\n    exit 0\n  fi\n\n  echo \"🚀 Starting sidecar server...\"\n  cd \"$SIDECAR_DIR\"\n  nohup python3 sidecar.py > \"$SIDECAR_LOG\" 2>&1 &\n\n  # Wait for server to be ready (model loading takes time)\n  echo \"⏳ Waiting for model to load (this may take 30-60s on first run)...\"\n  for i in {1..60}; do\n    if lsof -i :8080 -sTCP:LISTEN > /dev/null 2>&1; then\n      echo \"✅ Sidecar ready on port 8080\"\n      exit 0\n    fi\n    sleep 1\n  done\n\n  echo \"⚠️ Sidecar still loading... check: tail -f $SIDECAR_LOG\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC130102FD60A4C39FD4D4F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13CD58A9824F6E16D3F86B12 /* AudioCaptureService.swift in Sources */,
+				8286D2E0D3E43DC753D6EA85 /* ContentView.swift in Sources */,
+				AD5CDBCB2E72AF4A3CC46E0D /* ConversationState.swift in Sources */,
+				F7DB7FACB78922EB0DA00817 /* ConversationViewModel.swift in Sources */,
+				0C636E574EBD8EBA56769EAE /* DownloadProgressView.swift in Sources */,
+				20F1BE134896AF0E4E56A77B /* EndSessionButton.swift in Sources */,
+				59436A42950D9F9F955DCD50 /* GlowVisualizer.swift in Sources */,
+				C7B4ECADDF68FDDA6C3F57E8 /* LLMService.swift in Sources */,
+				DB7D04F5D1B207954486D5D8 /* ModelDownloader.swift in Sources */,
+				F9EAA8CB0EFBBA1999F0DF08 /* OnDeviceLLMService.swift in Sources */,
+				6B60FEA6CF3286AE801A3C7F /* SidecarLLMService.swift in Sources */,
+				ED47FC37FD3B4ACFE183171B /* SpeechRecognizer.swift in Sources */,
+				FCD07E42FFAA906823AEE8BC /* SpeechSynthesizer.swift in Sources */,
+				73DCB4FBBC2C75A7028B84EF /* Transcript.swift in Sources */,
+				4793B9BBBD27C4DEC13D158E /* TranscriptDetailView.swift in Sources */,
+				EA01595C910A9A05E3B7B765 /* TranscriptHistoryView.swift in Sources */,
+				CFA581343C9DBB77F8C99298 /* TranscriptStore.swift in Sources */,
+				24D439839A518DEF51A7C563 /* VoiceGeniusApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1119BD79881C5258FFB76B84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		51DDB21A2C623A8A10D5C619 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = VoiceGenius/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.voicegenius.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D16B4607CC8CD18F6E3A0DD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		EF18970935520A2CA9E58141 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = VoiceGenius/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.voicegenius.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		895171375AC4BF7BD06113C2 /* Build configuration list for PBXNativeTarget "VoiceGenius" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF18970935520A2CA9E58141 /* Debug */,
+				51DDB21A2C623A8A10D5C619 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D140F67C004C5A3C85A6B420 /* Build configuration list for PBXProject "VoiceGenius" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D16B4607CC8CD18F6E3A0DD9 /* Debug */,
+				1119BD79881C5258FFB76B84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2CA60785763C8B8CDB839F14 /* Project object */;
+}
