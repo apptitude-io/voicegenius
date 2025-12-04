@@ -12,6 +12,7 @@
 		20F1BE134896AF0E4E56A77B /* EndSessionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11993AB27D1A2825A4CCD /* EndSessionButton.swift */; };
 		24D439839A518DEF51A7C563 /* VoiceGeniusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE46B8BC972AA231E7E7A83 /* VoiceGeniusApp.swift */; };
 		4793B9BBBD27C4DEC13D158E /* TranscriptDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D9FE9E3D654165D14B5DC /* TranscriptDetailView.swift */; };
+		512F8C3D0763D9AB05274EC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC60D5B9AAFED2E1AD473B8 /* Assets.xcassets */; };
 		59436A42950D9F9F955DCD50 /* GlowVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316605F3AC64D4A600533DAD /* GlowVisualizer.swift */; };
 		6B60FEA6CF3286AE801A3C7F /* SidecarLLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30258851C12E47D3E1E39B /* SidecarLLMService.swift */; };
 		73DCB4FBBC2C75A7028B84EF /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038496C2841DA3D2400F692B /* Transcript.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		038496C2841DA3D2400F692B /* Transcript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
+		2BC60D5B9AAFED2E1AD473B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C30258851C12E47D3E1E39B /* SidecarLLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidecarLLMService.swift; sourceTree = "<group>"; };
 		2CAF758A0BA041E5521BC77F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		316605F3AC64D4A600533DAD /* GlowVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowVisualizer.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		1611458BA97327FCCB76B9AF /* VoiceGenius */ = {
 			isa = PBXGroup;
 			children = (
+				2BC60D5B9AAFED2E1AD473B8 /* Assets.xcassets */,
 				2CAF758A0BA041E5521BC77F /* Info.plist */,
 				6DE46B8BC972AA231E7E7A83 /* VoiceGeniusApp.swift */,
 				4FBED94364311FF9BEC4920F /* Models */,
@@ -134,6 +137,7 @@
 			buildPhases = (
 				28D1930840E19F00B8CE9C68 /* Start Sidecar (Simulator Only) */,
 				CC130102FD60A4C39FD4D4F4 /* Sources */,
+				52C0617AE29A4F2B2C605900 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -179,6 +183,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52C0617AE29A4F2B2C605900 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				512F8C3D0763D9AB05274EC0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		28D1930840E19F00B8CE9C68 /* Start Sidecar (Simulator Only) */ = {
