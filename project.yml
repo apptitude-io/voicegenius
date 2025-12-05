@@ -27,9 +27,6 @@ targets:
         platform: iOS
         sources:
             - VoiceGenius
-            - path: config.json
-              type: file
-              buildPhase: resources
         dependencies:
             - target: VoiceGeniusAssetDownloader
         preBuildScripts:

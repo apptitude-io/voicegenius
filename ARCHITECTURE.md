@@ -38,24 +38,27 @@ VoiceGenius/
 ├── VoiceGeniusApp.swift          # App entry point
 ├── Models/
 │   ├── ConversationState.swift   # State enum (idle/listening/thinking/speaking)
+│   ├── LLMBackend.swift          # Backend enum + ModelPreset struct
 │   └── Transcript.swift          # Conversation transcript model
 ├── Services/
-│   ├── AppConfig.swift           # Runtime config from config.json
 │   ├── AudioCaptureService.swift # Microphone + amplitude metering
 │   ├── SpeechRecognizer.swift    # On-device STT with VAD
 │   ├── SpeechSynthesizer.swift   # TTS via AVSpeechSynthesizer
 │   ├── LLMService.swift          # Protocol + factory
 │   ├── SidecarLLMService.swift   # HTTP client for Simulator
 │   ├── OnDeviceLLMService.swift  # MLX Swift for Device
+│   ├── FoundationLLMService.swift # Apple Intelligence (iOS 26+)
 │   ├── ModelDownloader.swift     # HuggingFace model downloader
 │   └── TranscriptStore.swift     # JSON persistence for transcripts
 ├── ViewModels/
-│   └── ConversationViewModel.swift # Main orchestrator
+│   ├── ConversationViewModel.swift # Main orchestrator
+│   └── SettingsViewModel.swift     # User preferences (UserDefaults)
 └── Views/
     ├── ContentView.swift         # Root view composition
     ├── GlowVisualizer.swift      # Breathing circle animation
     ├── DownloadProgressView.swift # Model download UI
     ├── EndSessionButton.swift    # Start/stop session control
+    ├── SettingsView.swift        # Backend/model settings UI
     ├── TranscriptHistoryView.swift # Conversation history list
     └── TranscriptDetailView.swift  # Single transcript view
 
@@ -106,28 +109,32 @@ The `ConversationViewModel` orchestrates the main conversation loop:
 - UI updates dispatched to main thread via `DispatchQueue.main.async`
 - VAD (Voice Activity Detection) uses 1.2s silence threshold to detect utterance end
 
-### 3. LLM Service (Sidecar Pattern)
+### 3. LLM Service (Dynamic Backend Selection)
 
-The app uses compile-time switching to select the appropriate LLM backend:
+The app supports runtime switching between backends via `LLMFactory`:
 
 ```swift
-#if targetEnvironment(simulator)
-    return SidecarLLMService()  // HTTP to Python server
-#else
-    return OnDeviceLLMService() // MLX Swift on-device
-#endif
+switch settings.backend {
+case .foundation:
+    return FoundationLLMService()  // Apple Intelligence (iOS 26+)
+case .mlx:
+    #if targetEnvironment(simulator)
+    return SidecarLLMService()     // HTTP to Python server
+    #else
+    return OnDeviceLLMService()    // MLX Swift on-device
+    #endif
+}
 ```
 
-**Simulator Path:**
-```
-iOS App ──HTTP POST──► Python Flask ──► MLX-LM ──► Response
-         localhost:8080
-```
+**Backend Options:**
 
-**Device Path:**
-```
-iOS App ──► MLXLLM Framework ──► Metal/ANE ──► Response
-```
+| Backend | Service | Requirements |
+|---------|---------|--------------|
+| Apple Foundation | `FoundationLLMService` | iOS 26+, Apple Intelligence device |
+| MLX (Simulator) | `SidecarLLMService` | Python sidecar running |
+| MLX (Device) | `OnDeviceLLMService` | Model downloaded (~2GB) |
+
+**Hot-Swap Support:** When switching backends, `ConversationViewModel.reinitializeLLMService()` unloads the current model (freeing ~2GB RAM) before loading the new service.
 
 ### 4. Model Asset Management
 
@@ -266,6 +273,7 @@ App Launch
 | Component | Actor Isolation | Reason |
 |-----------|-----------------|--------|
 | `ConversationViewModel` | `@MainActor` | UI state management |
+| `SettingsViewModel` | `@MainActor` | UI-bound settings |
 | `ModelDownloader` | `@MainActor` | Published properties for UI |
 | `TranscriptStore` | `@MainActor` | Published transcript list |
 | `SpeechSynthesizer` | `@MainActor` | AVSpeechSynthesizer delegate |
@@ -273,20 +281,20 @@ App Launch
 | `SpeechRecognizer` | `@unchecked Sendable` | Recognition callbacks on background |
 | `SidecarLLMService` | `@unchecked Sendable` | Network operations |
 | `OnDeviceLLMService` | `@unchecked Sendable` | MLX inference |
+| `FoundationLLMService` | `@unchecked Sendable` | Foundation Models inference |
 
 ## Configuration
 
-Runtime configuration is loaded from `config.json`:
+Settings are managed by `SettingsViewModel` and persisted in UserDefaults:
 
-```json
-{
-  "model": "mlx-community/Qwen2.5-3B-Instruct-4bit",
-  "max_tokens": 256,
-  "system_prompt": "..."
-}
-```
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `backend` | `.mlx` | LLM backend (MLX or Apple Foundation) |
+| `selectedPreset` | Balanced | Model preset (Qwen 3B or Llama 1B) |
+| `systemPrompt` | (voice assistant) | AI persona instructions |
+| `maxTokens` | 256 | Max response length |
 
-Accessed via `AppConfig.shared` singleton.
+Accessed via `SettingsViewModel.shared` singleton. Settings UI available via gear icon.
 
 ## Storage Locations
 

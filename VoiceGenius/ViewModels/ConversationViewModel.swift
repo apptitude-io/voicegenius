@@ -13,6 +13,9 @@ final class ConversationViewModel {
     var errorMessage: String?
     var modelName: String?
 
+    // Model switching state
+    var isSwitchingModel = false
+
     // Download state (observed from ModelDownloader)
     var isCheckingModel = true
 
@@ -32,8 +35,13 @@ final class ConversationViewModel {
         modelDownloader.isOnCellular
     }
 
+    /// Current backend being used
+    var currentBackend: LLMBackend {
+        SettingsViewModel.shared.backend
+    }
+
     // Services
-    private let llmService: LLMService
+    private var llmService: LLMService
     private let audioCapture: AudioCaptureService
     private let speechRecognizer: SpeechRecognizer
     private let speechSynthesizer: SpeechSynthesizer
@@ -53,6 +61,33 @@ final class ConversationViewModel {
         self.transcriptStore = TranscriptStore()
 
         setupCallbacks()
+    }
+
+    // MARK: - Model Hot-Swap
+
+    /// Reinitialize the LLM service with current settings
+    /// Call this when backend or model selection changes
+    func reinitializeLLMService() async {
+        guard !isSessionActive else {
+            errorMessage = "Cannot switch models during an active session"
+            return
+        }
+
+        isSwitchingModel = true
+        errorMessage = nil
+
+        // Unload current model to free memory
+        if let managedService = llmService as? ManagedLLMService {
+            await managedService.unload()
+        }
+
+        // Create new service based on current settings
+        llmService = LLMFactory.create()
+
+        // Initialize the new service
+        await checkModelAndInitialize()
+
+        isSwitchingModel = false
     }
 
     private func setupCallbacks() {
@@ -83,13 +118,28 @@ final class ConversationViewModel {
 
     func checkModelAndInitialize() async {
         isCheckingModel = true
+        let settings = SettingsViewModel.shared
 
+        // Handle Foundation backend
+        if settings.backend == .foundation {
+            if FoundationLLMService.isAvailable {
+                modelName = "Apple Intelligence"
+                isCheckingModel = false
+                return
+            } else {
+                errorMessage = "Apple Intelligence not available on this device"
+                isCheckingModel = false
+                return
+            }
+        }
+
+        // Handle MLX backend
         #if targetEnvironment(simulator)
         // On simulator, check if sidecar is running
         if let sidecarService = llmService as? SidecarLLMService {
-            let (isRunning, model) = await sidecarService.healthCheck()
+            let (isRunning, _) = await sidecarService.healthCheck()
             if isRunning {
-                modelName = model
+                modelName = settings.selectedPreset.name
             } else {
                 errorMessage = "Sidecar server not running. Start it with: python sidecar/sidecar.py"
             }
@@ -105,7 +155,7 @@ final class ConversationViewModel {
             if let deviceService = llmService as? OnDeviceLLMService {
                 do {
                     try await deviceService.loadModel()
-                    modelName = modelDownloader.modelName
+                    modelName = settings.selectedPreset.name
                 } catch {
                     errorMessage = "Failed to load model: \(error.localizedDescription)"
                 }

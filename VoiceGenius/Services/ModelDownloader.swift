@@ -76,15 +76,21 @@ final class ModelDownloader: NSObject, ObservableObject {
 
     // MARK: - Configuration
 
-    private var modelRepo: String { AppConfig.shared.model }
+    /// Get the model repo from current settings (uses preset selection)
+    @MainActor
+    private var modelRepo: String {
+        SettingsViewModel.shared.currentModelRepoId
+    }
+
     private let baseURL = "https://huggingface.co"
 
     /// Minimum required free space (model size + 800MB buffer)
     private let minimumFreeSpaceBytes: Int64 = 2_500_000_000 // 2.5 GB
 
     /// Returns just the model name (after the last /)
+    @MainActor
     var modelName: String {
-        AppConfig.shared.modelName
+        SettingsViewModel.shared.selectedPreset.name
     }
 
     // MARK: - Published State

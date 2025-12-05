@@ -125,15 +125,17 @@ struct DownloadProgressView: View {
     }
 }
 
-/// View shown while checking for model
+/// View shown while checking for model or switching models
 struct CheckingModelView: View {
+    var message: String?
+
     var body: some View {
         VStack(spacing: 16) {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
                 .scaleEffect(1.5)
 
-            Text("Checking model...")
+            Text(message ?? "Checking model...")
                 .foregroundColor(.gray)
         }
     }

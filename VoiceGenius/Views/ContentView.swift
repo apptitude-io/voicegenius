@@ -4,6 +4,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var viewModel = ConversationViewModel()
     @State private var showingHistory = false
+    @State private var showingSettings = false
 
     var body: some View {
         ZStack {
@@ -12,9 +13,18 @@ struct ContentView: View {
 
             // Main content
             VStack {
-                // History button
+                // Top bar with settings and history
                 HStack {
+                    Button(action: { showingSettings = true }) {
+                        Image(systemName: "gear")
+                            .font(.title2)
+                            .foregroundColor(.white.opacity(0.7))
+                            .padding()
+                    }
+                    .disabled(viewModel.isSessionActive)
+
                     Spacer()
+
                     Button(action: { showingHistory = true }) {
                         Image(systemName: "list.bullet")
                             .font(.title2)
@@ -65,9 +75,11 @@ struct ContentView: View {
             }
 
             // Loading/Download overlays
-            if viewModel.isCheckingModel {
+            if viewModel.isCheckingModel || viewModel.isSwitchingModel {
                 Color.black.opacity(0.8).ignoresSafeArea()
-                CheckingModelView()
+                CheckingModelView(
+                    message: viewModel.isSwitchingModel ? "Switching model..." : nil
+                )
             } else if viewModel.isDownloading {
                 Color.black.opacity(0.8).ignoresSafeArea()
                 DownloadProgressView(
@@ -82,6 +94,16 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingHistory) {
             TranscriptHistoryView(store: viewModel.transcriptStore)
+        }
+        .sheet(isPresented: $showingSettings) {
+            SettingsView(
+                onConfigurationChanged: {
+                    Task {
+                        await viewModel.reinitializeLLMService()
+                    }
+                },
+                modelDownloader: viewModel.modelDownloader
+            )
         }
         .task {
             await viewModel.checkModelAndInitialize()

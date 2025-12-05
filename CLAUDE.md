@@ -6,15 +6,16 @@ VoiceGenius is a native iOS voice-to-voice app that converses with a local LLM. 
 
 ## Architecture
 
-### Sidecar Pattern
-- **Simulator builds**: Use `SidecarLLMService` → HTTP to `localhost:8080` Python server
-- **Device builds**: Use `OnDeviceLLMService` → MLX Swift on-device inference
-- Compile-time switching via `#if targetEnvironment(simulator)`
+### LLM Backend Selection
+- **MLX (Simulator)**: `SidecarLLMService` → HTTP to `localhost:8080` Python server
+- **MLX (Device)**: `OnDeviceLLMService` → MLX Swift on-device inference
+- **Apple Foundation**: `FoundationLLMService` → Apple Intelligence (iOS 26+)
+- Runtime switching via Settings (gear icon) with hot-swap memory management
 
 ### Key Components
 - **Services**: LLM, Audio Capture, Speech Recognition, TTS, Model Download, Transcript Storage
-- **ViewModels**: `ConversationViewModel` orchestrates the conversation loop
-- **Views**: SwiftUI with `GlowVisualizer` (breathing circle animation)
+- **ViewModels**: `ConversationViewModel` (conversation loop), `SettingsViewModel` (user preferences)
+- **Views**: SwiftUI with `GlowVisualizer` (breathing circle animation), `SettingsView` (backend/model selection)
 
 ## Build & Run
 
