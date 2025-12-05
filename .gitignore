@@ -85,3 +85,4 @@ sidecar/*.log
 
 # Planning Files
 /plan
+CLAUDE.md
