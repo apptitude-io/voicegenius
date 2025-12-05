@@ -90,7 +90,10 @@ struct ContentView: View {
     private var stateText: String {
         switch viewModel.state {
         case .idle:
-            return "Tap to start"
+            if let model = viewModel.modelName {
+                return "Loaded \(model)."
+            }
+            return "Welcome."
         case .listening:
             return "Listening..."
         case .thinking:

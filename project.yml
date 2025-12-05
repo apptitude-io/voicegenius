@@ -17,6 +17,9 @@ targets:
     platform: iOS
     sources:
       - VoiceGenius
+      - path: config.json
+        type: file
+        buildPhase: resources
     preBuildScripts:
       - name: Start Sidecar (Simulator Only)
         script: |
@@ -32,7 +35,9 @@ targets:
             fi
 
             # Check if Python dependencies are installed
-            if ! python3 -c "import flask, mlx_lm" 2>/dev/null; then
+            # Use python3.12 explicitly since packages are installed there
+            PYTHON="/opt/homebrew/bin/python3.12"
+            if ! $PYTHON -c "import flask, mlx_lm" 2>/dev/null; then
               echo "⚠️ Python dependencies not installed. Run:"
               echo "   cd ${SIDECAR_DIR} && pip install -r requirements.txt"
               echo ""
@@ -42,7 +47,7 @@ targets:
 
             echo "🚀 Starting sidecar server..."
             cd "$SIDECAR_DIR"
-            nohup python3 sidecar.py > "$SIDECAR_LOG" 2>&1 &
+            nohup $PYTHON sidecar.py > "$SIDECAR_LOG" 2>&1 &
 
             # Wait for server to be ready (model loading takes time)
             echo "⏳ Waiting for model to load (this may take 30-60s on first run)..."
@@ -70,7 +75,7 @@ targets:
         CFBundleDisplayName: VoiceGenius
         CFBundleShortVersionString: "1.0"
         CFBundleVersion: "1"
-        UILaunchScreen: {}
+        UILaunchStoryboardName: LaunchScreen
         NSMicrophoneUsageDescription: "VoiceGenius needs microphone access to hear your voice."
         NSSpeechRecognitionUsageDescription: "VoiceGenius uses speech recognition to convert your voice to text."
         NSAppTransportSecurity:

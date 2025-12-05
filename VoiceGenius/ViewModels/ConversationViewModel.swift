@@ -11,6 +11,7 @@ final class ConversationViewModel {
     var currentTranscript: Transcript = Transcript()
     var isSessionActive = false
     var errorMessage: String?
+    var modelName: String?
 
     // Download state
     var isCheckingModel = true
@@ -73,8 +74,10 @@ final class ConversationViewModel {
         #if targetEnvironment(simulator)
         // On simulator, check if sidecar is running
         if let sidecarService = llmService as? SidecarLLMService {
-            let isRunning = await sidecarService.healthCheck()
-            if !isRunning {
+            let (isRunning, model) = await sidecarService.healthCheck()
+            if isRunning {
+                modelName = model
+            } else {
                 errorMessage = "Sidecar server not running. Start it with: python sidecar/sidecar.py"
             }
         }
@@ -89,6 +92,7 @@ final class ConversationViewModel {
             if let deviceService = llmService as? OnDeviceLLMService {
                 do {
                     try await deviceService.loadModel()
+                    modelName = modelDownloader.modelName
                 } catch {
                     errorMessage = "Failed to load model: \(error.localizedDescription)"
                 }

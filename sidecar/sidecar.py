@@ -4,14 +4,25 @@ VoiceGenius Sidecar Server
 Runs on host Mac to provide LLM inference for iOS Simulator.
 """
 
+import json
+from pathlib import Path
 from flask import Flask, request, jsonify
 from mlx_lm import load, generate
 
 app = Flask(__name__)
 
+# Load config from parent directory
+config_path = Path(__file__).parent.parent / "config.json"
+with open(config_path) as f:
+    config = json.load(f)
+
+MODEL_NAME = config["model"]
+MAX_TOKENS = config.get("max_tokens", 256)
+SYSTEM_PROMPT = config.get("system_prompt", "")
+
 # Load model once at startup
-print("Loading Sidecar Model...")
-model, tokenizer = load("mlx-community/Llama-3.2-1B-Instruct-4bit")
+print(f"Loading model: {MODEL_NAME}")
+model, tokenizer = load(MODEL_NAME)
 print("Model loaded successfully!")
 
 
@@ -24,8 +35,12 @@ def chat():
     if not prompt:
         return jsonify({"error": "No prompt provided"}), 400
 
-    # Format as chat message
-    messages = [{"role": "user", "content": prompt}]
+    # Build messages with optional system prompt
+    messages = []
+    if SYSTEM_PROMPT:
+        messages.append({"role": "system", "content": SYSTEM_PROMPT})
+    messages.append({"role": "user", "content": prompt})
+
     formatted_prompt = tokenizer.apply_chat_template(
         messages,
         tokenize=False,
@@ -37,7 +52,7 @@ def chat():
         model,
         tokenizer,
         prompt=formatted_prompt,
-        max_tokens=256,
+        max_tokens=MAX_TOKENS,
         verbose=True
     )
 
@@ -47,7 +62,8 @@ def chat():
 @app.route('/health', methods=['GET'])
 def health():
     """Health check endpoint."""
-    return jsonify({"status": "ok", "model": "Llama-3.2-1B-Instruct-4bit"})
+    model_name = MODEL_NAME.split("/")[-1]  # Just the name part
+    return jsonify({"status": "ok", "model": model_name})
 
 
 if __name__ == '__main__':

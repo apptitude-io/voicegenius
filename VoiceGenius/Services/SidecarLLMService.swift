@@ -42,15 +42,25 @@ final class SidecarLLMService: LLMService, @unchecked Sendable {
         }
     }
 
-    /// Check if the sidecar server is running
-    func healthCheck() async -> Bool {
+    /// Check if the sidecar server is running and get model name
+    func healthCheck() async -> (isRunning: Bool, modelName: String?) {
         let url = baseURL.appendingPathComponent("health")
         do {
-            let (_, response) = try await session.data(from: url)
-            guard let httpResponse = response as? HTTPURLResponse else { return false }
-            return httpResponse.statusCode == 200
+            let (data, response) = try await session.data(from: url)
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200 else {
+                return (false, nil)
+            }
+
+            struct HealthResponse: Decodable {
+                let status: String
+                let model: String
+            }
+
+            let healthResponse = try JSONDecoder().decode(HealthResponse.self, from: data)
+            return (true, healthResponse.model)
         } catch {
-            return false
+            return (false, nil)
         }
     }
 }

@@ -42,23 +42,24 @@ final class OnDeviceLLMService: LLMService, @unchecked Sendable {
             throw LLMError.modelNotLoaded
         }
 
-        // Format as chat message
-        let messages: [[String: String]] = [
-            ["role": "user", "content": prompt]
-        ]
+        // Build messages with optional system prompt
+        var messages: [[String: String]] = []
+        let systemPrompt = AppConfig.shared.systemPrompt
+        if !systemPrompt.isEmpty {
+            messages.append(["role": "system", "content": systemPrompt])
+        }
+        messages.append(["role": "user", "content": prompt])
 
         // Apply chat template
         let formattedPrompt = try tokenizer.applyChatTemplate(messages: messages)
 
         // Generate response
-        let parameters = GenerateParameters(maxTokens: 256)
-        var responseTokens: [String] = []
+        let parameters = GenerateParameters(maxTokens: AppConfig.shared.maxTokens)
 
         let result = try await model.generate(
             prompt: formattedPrompt,
             parameters: parameters
-        ) { token in
-            responseTokens.append(token)
+        ) { _ in
             return .more
         }
 

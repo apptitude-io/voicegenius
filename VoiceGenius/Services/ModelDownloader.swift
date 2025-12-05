@@ -3,8 +3,13 @@ import Foundation
 /// Service for downloading LLM model files from HuggingFace
 @MainActor
 final class ModelDownloader: NSObject, ObservableObject {
-    private let modelRepo = "mlx-community/Llama-3.2-1B-Instruct-4bit"
+    private var modelRepo: String { AppConfig.shared.model }
     private let baseURL = "https://huggingface.co"
+
+    /// Returns just the model name (after the last /)
+    var modelName: String {
+        AppConfig.shared.modelName
+    }
 
     @Published var isDownloading = false
     @Published var downloadProgress: Double = 0.0

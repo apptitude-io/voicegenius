@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,9 +11,12 @@
 		13CD58A9824F6E16D3F86B12 /* AudioCaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A6929ECAF5F2F03A88DE8 /* AudioCaptureService.swift */; };
 		20F1BE134896AF0E4E56A77B /* EndSessionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11993AB27D1A2825A4CCD /* EndSessionButton.swift */; };
 		24D439839A518DEF51A7C563 /* VoiceGeniusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE46B8BC972AA231E7E7A83 /* VoiceGeniusApp.swift */; };
+		35A992F076ECC72F652D22D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F7C9DE5F56C4ECC1985B631 /* LaunchScreen.storyboard */; };
+		3DDA304D1ADE84EAE8C68A99 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9662F2BBB614EAAF0C31C /* AppConfig.swift */; };
 		4793B9BBBD27C4DEC13D158E /* TranscriptDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D9FE9E3D654165D14B5DC /* TranscriptDetailView.swift */; };
 		512F8C3D0763D9AB05274EC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC60D5B9AAFED2E1AD473B8 /* Assets.xcassets */; };
 		59436A42950D9F9F955DCD50 /* GlowVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316605F3AC64D4A600533DAD /* GlowVisualizer.swift */; };
+		6B238E4CAD00D52451595664 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = D3C827CE2A30348D3FD8BED6 /* config.json */; };
 		6B60FEA6CF3286AE801A3C7F /* SidecarLLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30258851C12E47D3E1E39B /* SidecarLLMService.swift */; };
 		73DCB4FBBC2C75A7028B84EF /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038496C2841DA3D2400F692B /* Transcript.swift */; };
 		8286D2E0D3E43DC753D6EA85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFDE247CC7DA26B42C7E23 /* ContentView.swift */; };
@@ -38,17 +41,20 @@
 		54B11993AB27D1A2825A4CCD /* EndSessionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndSessionButton.swift; sourceTree = "<group>"; };
 		5F73EBD5113ADF19871D222E /* ConversationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationState.swift; sourceTree = "<group>"; };
 		6DE46B8BC972AA231E7E7A83 /* VoiceGeniusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceGeniusApp.swift; sourceTree = "<group>"; };
+		6ED9662F2BBB614EAAF0C31C /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		7C47F1576AEA4CD421904C22 /* TranscriptHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptHistoryView.swift; sourceTree = "<group>"; };
+		7F7C9DE5F56C4ECC1985B631 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		987372748FBF9B3B2B492AF9 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		A03A2BC74F20BF4D0AB02D8D /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		AE6D9FE9E3D654165D14B5DC /* TranscriptDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptDetailView.swift; sourceTree = "<group>"; };
-		B2AB5486581847936B65F304 /* VoiceGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2AB5486581847936B65F304 /* VoiceGenius.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VoiceGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04BDFCC89B75036B2BD435E /* ModelDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDownloader.swift; sourceTree = "<group>"; };
 		C11A6929ECAF5F2F03A88DE8 /* AudioCaptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCaptureService.swift; sourceTree = "<group>"; };
 		C732B31FBEB49919AA62E5D8 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		CAEFDE247CC7DA26B42C7E23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CF363AEDF2344B72F87E98A6 /* DownloadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadProgressView.swift; sourceTree = "<group>"; };
 		CF6EE7BC24EC4CDFDEC433A9 /* TranscriptStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptStore.swift; sourceTree = "<group>"; };
+		D3C827CE2A30348D3FD8BED6 /* config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		F61C921CAA1F64ABD8551C32 /* LLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +72,7 @@
 			children = (
 				2BC60D5B9AAFED2E1AD473B8 /* Assets.xcassets */,
 				2CAF758A0BA041E5521BC77F /* Info.plist */,
+				7F7C9DE5F56C4ECC1985B631 /* LaunchScreen.storyboard */,
 				6DE46B8BC972AA231E7E7A83 /* VoiceGeniusApp.swift */,
 				4FBED94364311FF9BEC4920F /* Models */,
 				1A9EA19404D7B96D028D068F /* Services */,
@@ -78,6 +85,7 @@
 		1A9EA19404D7B96D028D068F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6ED9662F2BBB614EAAF0C31C /* AppConfig.swift */,
 				C11A6929ECAF5F2F03A88DE8 /* AudioCaptureService.swift */,
 				F61C921CAA1F64ABD8551C32 /* LLMService.swift */,
 				C04BDFCC89B75036B2BD435E /* ModelDownloader.swift */,
@@ -115,6 +123,7 @@
 		C081E88450F0E69836209F89 = {
 			isa = PBXGroup;
 			children = (
+				D3C827CE2A30348D3FD8BED6 /* config.json */,
 				1611458BA97327FCCB76B9AF /* VoiceGenius */,
 				00CAFFA060519FDDA24AAB39 /* Products */,
 			);
@@ -175,6 +184,7 @@
 			);
 			mainGroup = C081E88450F0E69836209F89;
 			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -189,6 +199,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				512F8C3D0763D9AB05274EC0 /* Assets.xcassets in Resources */,
+				35A992F076ECC72F652D22D1 /* LaunchScreen.storyboard in Resources */,
+				6B238E4CAD00D52451595664 /* config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +224,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Only run for Simulator builds\nif [[ \"$PLATFORM_NAME\" == \"iphonesimulator\" ]]; then\n  SIDECAR_DIR=\"${SRCROOT}/sidecar\"\n  SIDECAR_LOG=\"/tmp/voicegenius_sidecar.log\"\n\n  # Check if sidecar is already running on port 8080\n  if lsof -i :8080 -sTCP:LISTEN > /dev/null 2>&1; then\n    echo \"✅ Sidecar already running on port 8080\"\n    exit 0\n  fi\n\n  # Check if Python dependencies are installed\n  if ! python3 -c \"import flask, mlx_lm\" 2>/dev/null; then\n    echo \"⚠️ Python dependencies not installed. Run:\"\n    echo \"   cd ${SIDECAR_DIR} && pip install -r requirements.txt\"\n    echo \"\"\n    echo \"Note: First run will download ~700MB model from HuggingFace\"\n    exit 0\n  fi\n\n  echo \"🚀 Starting sidecar server...\"\n  cd \"$SIDECAR_DIR\"\n  nohup python3 sidecar.py > \"$SIDECAR_LOG\" 2>&1 &\n\n  # Wait for server to be ready (model loading takes time)\n  echo \"⏳ Waiting for model to load (this may take 30-60s on first run)...\"\n  for i in {1..60}; do\n    if lsof -i :8080 -sTCP:LISTEN > /dev/null 2>&1; then\n      echo \"✅ Sidecar ready on port 8080\"\n      exit 0\n    fi\n    sleep 1\n  done\n\n  echo \"⚠️ Sidecar still loading... check: tail -f $SIDECAR_LOG\"\nfi\n";
+			shellScript = "# Only run for Simulator builds\nif [[ \"$PLATFORM_NAME\" == \"iphonesimulator\" ]]; then\n  SIDECAR_DIR=\"${SRCROOT}/sidecar\"\n  SIDECAR_LOG=\"/tmp/voicegenius_sidecar.log\"\n\n  # Check if sidecar is already running on port 8080\n  if lsof -i :8080 -sTCP:LISTEN > /dev/null 2>&1; then\n    echo \"✅ Sidecar already running on port 8080\"\n    exit 0\n  fi\n\n  # Check if Python dependencies are installed\n  # Use python3.12 explicitly since packages are installed there\n  PYTHON=\"/opt/homebrew/bin/python3.12\"\n  if ! $PYTHON -c \"import flask, mlx_lm\" 2>/dev/null; then\n    echo \"⚠️ Python dependencies not installed. Run:\"\n    echo \"   cd ${SIDECAR_DIR} && pip install -r requirements.txt\"\n    echo \"\"\n    echo \"Note: First run will download ~700MB model from HuggingFace\"\n    exit 0\n  fi\n\n  echo \"🚀 Starting sidecar server...\"\n  cd \"$SIDECAR_DIR\"\n  nohup $PYTHON sidecar.py > \"$SIDECAR_LOG\" 2>&1 &\n\n  # Wait for server to be ready (model loading takes time)\n  echo \"⏳ Waiting for model to load (this may take 30-60s on first run)...\"\n  for i in {1..60}; do\n    if lsof -i :8080 -sTCP:LISTEN > /dev/null 2>&1; then\n      echo \"✅ Sidecar ready on port 8080\"\n      exit 0\n    fi\n    sleep 1\n  done\n\n  echo \"⚠️ Sidecar still loading... check: tail -f $SIDECAR_LOG\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -221,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DDA304D1ADE84EAE8C68A99 /* AppConfig.swift in Sources */,
 				13CD58A9824F6E16D3F86B12 /* AudioCaptureService.swift in Sources */,
 				8286D2E0D3E43DC753D6EA85 /* ContentView.swift in Sources */,
 				AD5CDBCB2E72AF4A3CC46E0D /* ConversationState.swift in Sources */,
@@ -314,7 +327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.apptitude.voicegenius;
+				PRODUCT_BUNDLE_IDENTIFIER = com.voicegenius.app;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -396,7 +409,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.apptitude.voicegenius;
+				PRODUCT_BUNDLE_IDENTIFIER = com.voicegenius.app;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
