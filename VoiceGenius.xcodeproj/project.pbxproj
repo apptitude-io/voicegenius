@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,8 +20,10 @@
 		6B60FEA6CF3286AE801A3C7F /* SidecarLLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30258851C12E47D3E1E39B /* SidecarLLMService.swift */; };
 		73DCB4FBBC2C75A7028B84EF /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038496C2841DA3D2400F692B /* Transcript.swift */; };
 		8286D2E0D3E43DC753D6EA85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFDE247CC7DA26B42C7E23 /* ContentView.swift */; };
+		A320E13B62B0561FA08A6D2C /* AssetDownloaderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96324889B7E6F1C46D413931 /* AssetDownloaderExtension.swift */; };
 		AD5CDBCB2E72AF4A3CC46E0D /* ConversationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73EBD5113ADF19871D222E /* ConversationState.swift */; };
 		C7B4ECADDF68FDDA6C3F57E8 /* LLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61C921CAA1F64ABD8551C32 /* LLMService.swift */; };
+		CF649BC0C5BC72C36B8A6EB9 /* VoiceGeniusAssetDownloader.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DB4C3D62EFECFB6800567155 /* VoiceGeniusAssetDownloader.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CFA581343C9DBB77F8C99298 /* TranscriptStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6EE7BC24EC4CDFDEC433A9 /* TranscriptStore.swift */; };
 		DB7D04F5D1B207954486D5D8 /* ModelDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BDFCC89B75036B2BD435E /* ModelDownloader.swift */; };
 		EA01595C910A9A05E3B7B765 /* TranscriptHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C47F1576AEA4CD421904C22 /* TranscriptHistoryView.swift */; };
@@ -30,6 +32,30 @@
 		F9EAA8CB0EFBBA1999F0DF08 /* OnDeviceLLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF5C19A05242F0A879FC32 /* OnDeviceLLMService.swift */; };
 		FCD07E42FFAA906823AEE8BC /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A2BC74F20BF4D0AB02D8D /* SpeechSynthesizer.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		379515F9425B72B542BD9E56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CA60785763C8B8CDB839F14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F82B78AB4A94B7B8E8743761;
+			remoteInfo = VoiceGeniusAssetDownloader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		87A58D59CC222D0CD9882B19 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CF649BC0C5BC72C36B8A6EB9 /* VoiceGeniusAssetDownloader.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		038496C2841DA3D2400F692B /* Transcript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
@@ -44,10 +70,12 @@
 		6ED9662F2BBB614EAAF0C31C /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		7C47F1576AEA4CD421904C22 /* TranscriptHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptHistoryView.swift; sourceTree = "<group>"; };
 		7F7C9DE5F56C4ECC1985B631 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8377E2BA2EE27A6C003FDF38 /* VoiceGenius.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VoiceGenius.entitlements; sourceTree = "<group>"; };
+		96324889B7E6F1C46D413931 /* AssetDownloaderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDownloaderExtension.swift; sourceTree = "<group>"; };
 		987372748FBF9B3B2B492AF9 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		A03A2BC74F20BF4D0AB02D8D /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		AE6D9FE9E3D654165D14B5DC /* TranscriptDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptDetailView.swift; sourceTree = "<group>"; };
-		B2AB5486581847936B65F304 /* VoiceGenius.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VoiceGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2AB5486581847936B65F304 /* VoiceGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04BDFCC89B75036B2BD435E /* ModelDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDownloader.swift; sourceTree = "<group>"; };
 		C11A6929ECAF5F2F03A88DE8 /* AudioCaptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCaptureService.swift; sourceTree = "<group>"; };
 		C732B31FBEB49919AA62E5D8 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
@@ -55,6 +83,8 @@
 		CF363AEDF2344B72F87E98A6 /* DownloadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadProgressView.swift; sourceTree = "<group>"; };
 		CF6EE7BC24EC4CDFDEC433A9 /* TranscriptStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptStore.swift; sourceTree = "<group>"; };
 		D3C827CE2A30348D3FD8BED6 /* config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		DB4C3D62EFECFB6800567155 /* VoiceGeniusAssetDownloader.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VoiceGeniusAssetDownloader.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE28ED9F1C12CDD5E02E97EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F61C921CAA1F64ABD8551C32 /* LLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				B2AB5486581847936B65F304 /* VoiceGenius.app */,
+				DB4C3D62EFECFB6800567155 /* VoiceGeniusAssetDownloader.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +101,7 @@
 		1611458BA97327FCCB76B9AF /* VoiceGenius */ = {
 			isa = PBXGroup;
 			children = (
+				8377E2BA2EE27A6C003FDF38 /* VoiceGenius.entitlements */,
 				2BC60D5B9AAFED2E1AD473B8 /* Assets.xcassets */,
 				2CAF758A0BA041E5521BC77F /* Info.plist */,
 				7F7C9DE5F56C4ECC1985B631 /* LaunchScreen.storyboard */,
@@ -125,8 +157,18 @@
 			children = (
 				D3C827CE2A30348D3FD8BED6 /* config.json */,
 				1611458BA97327FCCB76B9AF /* VoiceGenius */,
+				C8D7D6CAF1768256429FC956 /* VoiceGeniusAssetDownloader */,
 				00CAFFA060519FDDA24AAB39 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		C8D7D6CAF1768256429FC956 /* VoiceGeniusAssetDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				96324889B7E6F1C46D413931 /* AssetDownloaderExtension.swift */,
+				EE28ED9F1C12CDD5E02E97EC /* Info.plist */,
+			);
+			path = VoiceGeniusAssetDownloader;
 			sourceTree = "<group>";
 		};
 		FA45D54D3CF8A3BD602C6555 /* ViewModels */ = {
@@ -147,10 +189,12 @@
 				28D1930840E19F00B8CE9C68 /* Start Sidecar (Simulator Only) */,
 				CC130102FD60A4C39FD4D4F4 /* Sources */,
 				52C0617AE29A4F2B2C605900 /* Resources */,
+				87A58D59CC222D0CD9882B19 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8D4737F8A7978D46DF441E22 /* PBXTargetDependency */,
 			);
 			name = VoiceGenius;
 			packageProductDependencies = (
@@ -158,6 +202,23 @@
 			productName = VoiceGenius;
 			productReference = B2AB5486581847936B65F304 /* VoiceGenius.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F82B78AB4A94B7B8E8743761 /* VoiceGeniusAssetDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 733683CA74EB53362F908EA6 /* Build configuration list for PBXNativeTarget "VoiceGeniusAssetDownloader" */;
+			buildPhases = (
+				8E410A56DD0EA7E420549E2A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoiceGeniusAssetDownloader;
+			packageProductDependencies = (
+			);
+			productName = VoiceGeniusAssetDownloader;
+			productReference = DB4C3D62EFECFB6800567155 /* VoiceGeniusAssetDownloader.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -169,7 +230,9 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					90B0EEB56785C5BD8A598DCE = {
-						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					F82B78AB4A94B7B8E8743761 = {
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -184,11 +247,11 @@
 			);
 			mainGroup = C081E88450F0E69836209F89;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				90B0EEB56785C5BD8A598DCE /* VoiceGenius */,
+				F82B78AB4A94B7B8E8743761 /* VoiceGeniusAssetDownloader */,
 			);
 		};
 /* End PBXProject section */
@@ -229,6 +292,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8E410A56DD0EA7E420549E2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A320E13B62B0561FA08A6D2C /* AssetDownloaderExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CC130102FD60A4C39FD4D4F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +327,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8D4737F8A7978D46DF441E22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F82B78AB4A94B7B8E8743761 /* VoiceGeniusAssetDownloader */;
+			targetProxy = 379515F9425B72B542BD9E56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1119BD79881C5258FFB76B84 /* Release */ = {
@@ -319,16 +398,36 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VoiceGenius/VoiceGenius.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L23DSA7H9F;
 				INFOPLIST_FILE = VoiceGenius/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.voicegenius.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.apptitude.voicegenius;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		57274FFC2F09C5BE20FA94FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L23DSA7H9F;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VoiceGeniusAssetDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.apptitude.voicegenius.AssetDownloader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -401,16 +500,36 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VoiceGenius/VoiceGenius.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L23DSA7H9F;
 				INFOPLIST_FILE = VoiceGenius/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.voicegenius.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.apptitude.voicegenius;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC17B2A9461631EB95BB87EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L23DSA7H9F;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VoiceGeniusAssetDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.apptitude.voicegenius.AssetDownloader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -418,6 +537,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		733683CA74EB53362F908EA6 /* Build configuration list for PBXNativeTarget "VoiceGeniusAssetDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC17B2A9461631EB95BB87EF /* Debug */,
+				57274FFC2F09C5BE20FA94FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		895171375AC4BF7BD06113C2 /* Build configuration list for PBXNativeTarget "VoiceGenius" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

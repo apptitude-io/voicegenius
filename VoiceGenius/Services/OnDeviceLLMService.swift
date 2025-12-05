@@ -13,12 +13,11 @@ final class OnDeviceLLMService: LLMService, @unchecked Sendable {
     private var tokenizer: Tokenizer?
     #endif
 
-    private let modelDirectory: URL
-
-    init() {
-        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        self.modelDirectory = documentsPath.appendingPathComponent("models", isDirectory: true)
+    private var modelDirectory: URL {
+        ModelDownloader.modelDirectory
     }
+
+    init() {}
 
     func loadModel() async throws {
         #if !targetEnvironment(simulator)

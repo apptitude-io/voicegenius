@@ -82,3 +82,6 @@ sidecar/*.log
 # Logs
 *.log
 /tmp/voicegenius_*.log
+
+# Planning Files
+/plan

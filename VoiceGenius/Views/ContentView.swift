@@ -71,10 +71,11 @@ struct ContentView: View {
             } else if viewModel.isDownloading {
                 Color.black.opacity(0.8).ignoresSafeArea()
                 DownloadProgressView(
-                    progress: viewModel.downloadProgress,
-                    currentFile: viewModel.downloadCurrentFile,
+                    state: viewModel.downloadState,
+                    progressText: viewModel.downloadProgressText,
+                    isOnCellular: viewModel.isOnCellular,
                     onCancel: {
-                        // Cancel not fully implemented
+                        viewModel.cancelDownload()
                     }
                 )
             }

@@ -13,18 +13,31 @@ final class ConversationViewModel {
     var errorMessage: String?
     var modelName: String?
 
-    // Download state
+    // Download state (observed from ModelDownloader)
     var isCheckingModel = true
-    var isDownloading = false
-    var downloadProgress: Double = 0.0
-    var downloadCurrentFile: String = ""
+
+    var downloadState: ModelDownloadState {
+        modelDownloader.state
+    }
+
+    var isDownloading: Bool {
+        modelDownloader.state.isActive
+    }
+
+    var downloadProgressText: String {
+        modelDownloader.progressText
+    }
+
+    var isOnCellular: Bool {
+        modelDownloader.isOnCellular
+    }
 
     // Services
     private let llmService: LLMService
     private let audioCapture: AudioCaptureService
     private let speechRecognizer: SpeechRecognizer
     private let speechSynthesizer: SpeechSynthesizer
-    private let modelDownloader: ModelDownloader
+    let modelDownloader: ModelDownloader
     let transcriptStore: TranscriptStore
 
     // Sine wave animation for speaking state
@@ -103,21 +116,21 @@ final class ConversationViewModel {
     }
 
     func downloadModel() async {
-        isDownloading = true
-        downloadProgress = 0.0
-
         do {
             try await modelDownloader.downloadModel()
 
             // Load the model after download
             if let deviceService = llmService as? OnDeviceLLMService {
                 try await deviceService.loadModel()
+                modelName = modelDownloader.modelName
             }
         } catch {
-            errorMessage = "Download failed: \(error.localizedDescription)"
+            errorMessage = error.localizedDescription
         }
+    }
 
-        isDownloading = false
+    func cancelDownload() {
+        modelDownloader.cancelDownload()
     }
 
     // MARK: - Session Control
