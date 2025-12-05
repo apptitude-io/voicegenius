@@ -139,7 +139,7 @@ final class ConversationViewModel {
         if let sidecarService = llmService as? SidecarLLMService {
             let (isRunning, _) = await sidecarService.healthCheck()
             if isRunning {
-                modelName = settings.selectedPreset.name
+                modelName = settings.selectedPreset.friendlyModelName
             } else {
                 errorMessage = "Sidecar server not running. Start it with: python sidecar/sidecar.py"
             }
@@ -155,7 +155,7 @@ final class ConversationViewModel {
             if let deviceService = llmService as? OnDeviceLLMService {
                 do {
                     try await deviceService.loadModel()
-                    modelName = settings.selectedPreset.name
+                    modelName = settings.selectedPreset.friendlyModelName
                 } catch {
                     errorMessage = "Failed to load model: \(error.localizedDescription)"
                 }

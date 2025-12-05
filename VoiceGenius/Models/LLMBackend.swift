@@ -7,7 +7,7 @@ enum LLMBackend: String, Codable, CaseIterable {
 
     var displayName: String {
         switch self {
-        case .mlx: return "HuggingFace"
+        case .mlx: return "MLX"
         case .foundation: return "Apple Intelligence"
         }
     }
@@ -43,6 +43,7 @@ enum LLMBackend: String, Codable, CaseIterable {
 struct ModelPreset: Identifiable, Codable, Equatable {
     let id: String
     let name: String
+    let friendlyModelName: String
     let repoId: String
     let description: String
     let sizeDescription: String
@@ -50,6 +51,7 @@ struct ModelPreset: Identifiable, Codable, Equatable {
     static let balanced = ModelPreset(
         id: "balanced",
         name: "Balanced",
+        friendlyModelName: "Qwen 2.5 3B",
         repoId: "mlx-community/Qwen2.5-3B-Instruct-4bit",
         description: "Good balance of speed and quality",
         sizeDescription: "~2GB"
@@ -58,6 +60,7 @@ struct ModelPreset: Identifiable, Codable, Equatable {
     static let efficient = ModelPreset(
         id: "efficient",
         name: "Efficient",
+        friendlyModelName: "Llama 3.2 1B",
         repoId: "mlx-community/Llama-3.2-1B-Instruct-4bit",
         description: "Faster responses, lower memory usage",
         sizeDescription: "~700MB"

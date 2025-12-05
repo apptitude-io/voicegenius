@@ -112,9 +112,12 @@ struct SettingsView: View {
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
+                    Text(preset.friendlyModelName)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
                     Text(preset.description)
                         .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(.tertiary)
                 }
 
                 Spacer()

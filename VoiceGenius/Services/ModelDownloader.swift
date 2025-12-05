@@ -87,10 +87,10 @@ final class ModelDownloader: NSObject, ObservableObject {
     /// Minimum required free space (model size + 800MB buffer)
     private let minimumFreeSpaceBytes: Int64 = 2_500_000_000 // 2.5 GB
 
-    /// Returns just the model name (after the last /)
+    /// Returns a friendly model name (e.g., "Qwen 2.5 3B")
     @MainActor
     var modelName: String {
-        SettingsViewModel.shared.selectedPreset.name
+        SettingsViewModel.shared.selectedPreset.friendlyModelName
     }
 
     // MARK: - Published State
